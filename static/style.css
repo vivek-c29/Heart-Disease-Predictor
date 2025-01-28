@@ -90,7 +90,7 @@ option{
     font-weight: bolder;
     opacity: 1;
     /* display: flex; */
-    
+
 }
 .btn:hover {
     background-color: rgb(64, 21, 138);
@@ -117,7 +117,7 @@ option{
     justify-content:space-around;
     align-items: center;
 }
-/* #272932 */
+
 
 .output-img{
     width:100px;
