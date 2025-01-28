@@ -7,6 +7,7 @@ flask_app=Flask(__name__)
 model=joblib.load('Models/model.pkl')
 #Mapping numerical disease to disease result
 disease_mapping={
+    
     1:'Heart Disease',
     0:'No Heart Disease(Normal)'
 }

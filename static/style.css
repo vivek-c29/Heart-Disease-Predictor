@@ -90,6 +90,7 @@ option{
     font-weight: bolder;
     opacity: 1;
     /* display: flex; */
+    
 }
 .btn:hover {
     background-color: rgb(64, 21, 138);
