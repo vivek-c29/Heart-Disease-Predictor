@@ -2,7 +2,7 @@ from flask import Flask,render_template,jsonify,request
 import numpy as np
 import pickle,joblib
 
-flask_app=Flask(__name__)
+app=Flask(__name__)
 
 model=joblib.load('Models/model.pkl')
 #Mapping numerical disease to disease result
@@ -10,12 +10,12 @@ disease_mapping={
     1:'Heart Disease',
     0:'No Heart Disease(Normal)'
 }
-@flask_app.route('/')
+@app.route('/')
 def home():
     return render_template("index.html")
    
     
-@flask_app.route("/predict",methods=["POST"])
+@app.route("/predict",methods=["POST"])
 def predict():
     #Get data from the form request
     float_features=[float(x) for x in request.form.values()]
@@ -30,5 +30,5 @@ def predict():
 
 
 if __name__=="__main__":
-    flask_app.run(debug=True)
+    app.run(debug=True)
     
