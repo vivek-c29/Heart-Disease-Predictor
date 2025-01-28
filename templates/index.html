@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Predictor</title>
+    <link rel="stylesheet" href="static\style.css">
+
+<body>
+    <h1 class="head">Heart Disease Predictor</h1>
+    <form action="{{ url_for('predict')}}" method="post">
+        <div class="container">
+            <label class="text">Enter Age</label>
+            <input class="input-box" name="age" type="number" placeholder="Age" required>
+
+            <label class="text">Sex</label>
+            <select name="sex" class="input-box" required>
+
+                <option value="">Select Sex</option>
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select>
+
+            <label class="text">Chest Pain Type</label>
+            <select name="cp" class="input-box" required>
+                <option value="">Select Chest Pain Type</option>
+                <option value="0">Normal</option>
+                <option value="1">Stable</option>
+                <option value="2">Mild</option>
+                <option value="3">Unstable</option>
+            </select>
+
+            <label class="text">Resting Blood Pressure</label>
+            <input type="number" class="input-box" name="trestbps" placeholder="130" required>
+
+            <label class="text">Serum Cholestrol(in mg/dl)</label>
+            <input type="number" class="input-box" name="chol" placeholder="245" required>
+
+            <label class="text">Maximum Heart Rate</label>
+            <input type="number" class="input-box" name="thalach" placeholder="150" required>
+
+            <label class="text">ST Depression</label>
+            <input type="" class="input-box" name="oldpeak" step="0.01" placeholder="1.10" required>
+
+            <label class="text">Number of major vessels colored by Fluoroscopy</label>
+            <select name="ca" class="input-box" required>
+                <option value="">Vessels colored by Fluoroscopy</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+
+            <label class="text">Thalasemmia Condition</label>
+            <select name="thal" class="input-box" required>
+                <option value="">Thalasemmia state(condition)</option>
+                <option value="0">Normal</option>
+                <option value="1">Fixed defect</option>
+                <option value="2">Reversable defect</option>
+                <option value="3">Abnormal</option>
+            </select>
+
+            <br><br>
+
+            <button type="submit" class="btn">Predict</button>
+            <br><br>
+            <div class="output">
+                {% if prediction_text == "Heart Disease"%}
+                <img class="output-img" src=".\static\heart_disease.jpeg" alt="image">
+                {{prediction_text}}
+                {% elif prediction_text=="No Heart Disease(Normal)" %}
+                <img class="output-img" src=".\static\norm_heart.jpeg" alt="image">
+                {{prediction_text}}
+                {% endif %}
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
