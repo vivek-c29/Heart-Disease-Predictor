@@ -3,4 +3,4 @@ Heart Disease Classifier A machine learning-powered web application to predict t
 
 ## https://heart-disease-predictor-model.onrender.com/
 Link for live preview of model on website.
-### (P.S :- Due to inactivity of website,it might take few time/seconds to run or restart thw service)
+### (P.S :- Due to inactivity of website,it might take few time/seconds to run or restart the service)
